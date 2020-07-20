@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Poppins:wght@200;400;500;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c61f07fccb.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="/css/index.css">
+    <title>Questioner | Sign up</title>
+ </head>
+
+<body>
+    <header id="header">
+        <nav class="nav">
+            <a href="/login" id="login-link">Log In</a>
+            <a href="/signUp" id="signup-link">Sign Up</a>
+        </nav>
+        <div id="banner-content">
+            <h1>Welcome to <br><span id="app-name">Questioner</span></h1>
+            <p>Put your upcoming events where people can see and be part of.</p>
+            <input type="button" value="Learn more" class="learn-more">
+            <p class="hidden-text">Questioner&trade; is a platform for advertising your upcoming events, manage and get
+                people talking about it.</p>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="section" id="login-signup-section">
+            <div id="logo">
+                <p>Q</p>
+            </div>
+            <div class="login-signup" id="signup-section">
+                <h2>Sign Up</h2>
+                <p>It's easier to sign up</p>
+                <% if(errors){ %> 
+                  <% errors.forEach(error =>{ %> 
+                    <% if(error.param == 'fullname'){ %> 
+                      <style>
+                        #fullname-wrapper {border: 1px solid red;}
+                        #fullname-wrapper i {background-color: red;}
+                        #fullname-wrapper + p {font-size: 0.8em; margin: -1em auto 1em auto; color: red;text-align: start;
+                          min-width: 150px; width: 76%; display: block;}
+                      </style>
+                    <% } else if (error.param == 'email') { %>
+                      <style>
+                        #email-wrapper {border: 1px solid red;}
+                        #email-wrapper i {background-color: red;}
+                        #email-wrapper + p {font-size: 0.8em; margin: -1em auto 1em auto; color: red;text-align: start;
+                          min-width: 150px; width: 76%; display: block;}
+                      </style>
+                    <% } else if (error.param == 'password') { %>
+                      <style>
+                        #password-wrapper {border: 1px solid red;}
+                        #password-wrapper i {background-color: red;}
+                        #password-wrapper + p {font-size: 0.8em; margin: -1em auto 1em auto; color: red;text-align: start;
+                          min-width: 150px; width: 76%;display: block;}
+                      </style>
+                    <% } %>                    
+                  <% })  %> 
+                <% } %> 
+
+                <form action="/signUp" method="post">
+                    <div class="input-wrapper" id="fullname-wrapper"><label for="fullname">Fullname</label><i class="fas fa-user"></i><input
+                        type="text" name="fullname" id="fullname" placeholder="Full Name" value="<%- fullname? fullname : '' %>"></div>
+                        <p>Full name must be at least 4 characters long</p>
+                    <div class="input-wrapper" id="email-wrapper" ><label for="email`">Email</label><i class="fas fa-envelope"></i><input
+                        type="email" name="email" id="email" placeholder="Email" value="<%- email? email : '' %>"></div>
+                        <p>Email is invalid</p>
+                        <% if(error) { %> 
+                          <style>
+                            #email-wrapper {border: 1px solid red;}
+                            #email-wrapper i {background-color: red;}
+                          </style>
+                         <p id="invalid-email" style="display: block;">The email address has already been registered.</p>
+                       <% } %> 
+                      
+                    <div class="input-wrapper" id="password-wrapper"><label for="password">Password</label><i class="fas fa-lock"></i><input
+                        type="password" name="password" id="password" placeholder="Password" value="<%- password? password : '' %>"></div>
+                        <p>Password must be at least 8 characters long</p>
+                    <button id="signin-btn" type="submit">Sign Up</button>
+                </form>
+               
+                <div class="divider">
+                    <hr>
+                    <div>OR</div>
+                    <hr>
+                </div>
+                <button id="google-signup"><i class="fab fa-google"></i> &nbsp;&nbsp;&nbsp;Sign up with Google</button>
+
+                <p>already have an account? <a href="/login">Log in</a></p>
+            </div>
+            <div><span>Create</span> | <span>Manage</span> | <span>Make it happen</span> </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

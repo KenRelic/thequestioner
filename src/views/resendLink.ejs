@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Poppins:wght@200;400;500;700&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c61f07fccb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Questioner | verification</title>
+</head>
+
+<body>
+<style>
+  #form{
+    display: none;
+  }
+  @media screen and (max-width: 540px) {
+    #link-btn, #send-link{
+      max-width: 80%;
+      margin: 1em auto;
+    }
+  }
+  @media screen and (min-width: 541px) {
+    #link-btn,#send-link {
+      max-width: 400px;
+      margin: 1em auto;
+    }
+  }
+</style>
+
+  <main id="main">
+    <section class="section" id="login-signup-section">
+      <div id="logo">
+        <p>Q</p>
+      </div>
+      <div class="login-signup" id="signup-section">
+        <h2>Resend Verification link</h2>
+        <p>The verification link has expired or is invalid. Request for a new link to verify your email.</p>
+        <br />
+        <br />
+        <br />
+        <input type="button" id="link-btn" value="Resend Verification Link">
+        <form action="/resendLink" method="post" id="form">         
+          <div class="input-wrapper" id="email-wrapper" ><i class="fas fa-envelope"></i><input
+            type="email" name="email" id="email" placeholder="Email"></div>
+       <% if(isInvalid || isNotFound){ %> 
+        <style>
+          #email-wrapper {border: 1px solid red;}
+          #email-wrapper i {background-color: red;}
+          #err-msg {font-size: 0.8em; margin: -1em auto 1em auto; color: red;text-align: start;
+            min-width: 150px; width: 76%;display: block;}
+        </style>
+            <% isInvalid ? `<p id="err-msg">Email is invalid</p>` : isNotFound ? `<p id="err-msg">Email is not yet registered on Questioner</p>` :''  %> 
+       <% } %> 
+        <br/>
+        <button type="submit" id="send-link">Send</button>
+        </form>
+      </div>
+      <div><span>Create</span> | <span>Manage</span> | <span>Make it happen</span> </div>
+    </section>
+
+  </main>
+<script>
+  const resendBtn = document.getElementById('link-btn');
+  const form = document.getElementById('form');
+  resendBtn.addEventListener('click', ()=>{
+    resendBtn.style.display = 'none';
+    form.style.display = 'block';
+
+  })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Poppins:wght@200;400;500;700&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c61f07fccb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Questioner | Confirmation</title>
+</head>
+
+<body>
+  <style>
+    #counter{
+      font-size: 3em;
+      text-align: center;
+    }
+    @media screen and (min-width: 540px) {
+      #resend-link-btn {
+        max-width: 80%;
+      }
+    }
+
+    @media screen and (min-width: 541px) {
+      #resend-link-btn {
+        max-width: 400px;
+      }
+    }
+  </style>
+
+  <main id="main">
+    <section class="section" id="login-signup-section">
+      <div id="logo">
+        <p>Q</p>
+      </div>
+      <div class="login-signup" id="signup-section">
+        <h2>Already verified</h2>
+        <p>This email is already verified. You will now be redirected to login.</p>
+        <br />
+        <br />
+        <br />
+        <form name="goto-login" action="/login" method="get">
+          <p id="counter">10</p>
+          <button type="submit" id="login-btn">Go to Login</button>
+        </form>
+      </div>
+      <div><span>Create</span> | <span>Manage</span> | <span>Make it happen</span> </div>
+    </section>
+
+  </main>
+  <script>
+    window.onload = function () {
+      let counter = document.getElementById('counter');
+      let time = 10;
+
+      let timer = setInterval(() => {
+        if (time == 1 ) {
+          return document.forms['goto-login'].submit();
+        }
+        counter.innerHTML = time + 's';
+        time -= 1;
+      }, 1000)
+      setTimeout(() => {
+        window.clearInterval(timer)
+      }, 10000);
+    }
+  </script>
+
+</body>
+
+</html>

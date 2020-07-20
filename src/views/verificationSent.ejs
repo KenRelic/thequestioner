@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Poppins:wght@200;400;500;700&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c61f07fccb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Questioner | Confirmation</title>
+</head>
+
+<body>
+<style>
+  @media screen and (max-width: 540px) {
+    #resend-link-btn{
+      max-width: 80%;
+    }
+  }
+  @media screen and (min-width: 541px) {
+    #resend-link-btn{
+      max-width: 400px;
+    }
+  }
+</style>
+
+  <main id="main">
+    <section class="section" id="login-signup-section">
+      <div id="logo">
+        <p>Q</p>
+      </div>
+      <div class="login-signup" id="signup-section">
+        <h2>Registration successful</h2>
+        <p>Thanks for registering on <b style="color: #ff29a6;">Questioner</b>. An mail has been sent to <%-email%> for you to
+          verify.</p>
+
+        <br />
+        <br />
+        <br />
+        <form action="/resendLink/<%= token %>" method="post">
+          <p>Haven't received the verification email yet?</p>
+
+          <button id="resend-link-btn" type="submit">Resend Verification Link</button>
+        </form>
+      </div>
+      <div><span>Create</span> | <span>Manage</span> | <span>Make it happen</span> </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
