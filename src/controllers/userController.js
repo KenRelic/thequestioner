@@ -12,6 +12,9 @@ exports.dashboard =  (req, res) => {
 exports.events = function (req, res) {
   res.render('events')
 }
+exports.event = function (req, res) {
+  res.render('event')
+}
 exports.activity = function (req, res) {
   res.render('activity')
 }
@@ -20,7 +23,7 @@ exports.settings = function (req, res) {
 }
 
 exports.newEvent = function (req, res) {
-  res.render('event')
+  res.render('createEvent')
 }
 exports.newAdmin = function (req, res) {
   res.render('createAdmin',{
