@@ -2,14 +2,40 @@
 const Token = require('../../model/Token');
 const User = require('../../model/User');
 
-exports.userSignUp = function (req, res) {
-
-}
 
 exports.userLogin = function (req, res) {
   res.render('login')
 }
+exports.dashboard =  (req, res) => {
+      res.render('dashboard')    
+}
+exports.events = function (req, res) {
+  res.render('events')
+}
+exports.activity = function (req, res) {
+  res.render('activity')
+}
+exports.settings = function (req, res) {
+  res.render('settings')
+}
 
+exports.newEvent = function (req, res) {
+  res.render('event')
+}
+exports.newAdmin = function (req, res) {
+  res.render('createAdmin',{
+    errors: undefined,
+    msg: undefined,
+    fullname: '', password: '', email: '',
+    error: undefined
+  })
+}
+exports.users = function (req, res) {
+  res.render('users')
+}
+exports.logout = function (req, res) {
+  res.render('logout')
+}
 exports.verifyLink = async (req, res, next) => {
   try {
     // Find a matching token

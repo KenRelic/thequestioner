@@ -11,6 +11,7 @@ const cors = require('cors');
 require('dotenv').config();
 // const validateUser = require('./validation');
 const indexRoute = require('./src/routes/index');
+const userRoute = require('./src/routes/user');
 
 const app = express();
 const port = process.env.PORT || 5050;
@@ -21,6 +22,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
 app.use('/', indexRoute);
+app.use('/me', userRoute);
+
+app.use(function(req, res, next){
+  res.render('404');
+  next();
+})
 
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
@@ -35,16 +42,6 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection not successful. [error]"));
 db.once("open", () => debug("connection to DB successful"));
 
-// Use connect method to connect to the server
-// async function main() {
-//   const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//   client.connect(err => {
-//     if (err) return console.log(err)
-//     debug(`DB ${chalk.green('connected')} successfully`);
-//     // perform actions on the collection object
-//     return client.close();
-//   });
-// }
-// main().catch(console.error);
+
 
 app.listen(port, () => debug(`Server ${chalk.magenta('running')} on port: ${chalk.green(port)}`));

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Questioner | Event</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+      <!-- Font awesome -->
+      <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <script src="https://kit.fontawesome.com/751b3a69bc.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  .card-header {
+    font-size: 3em;
+    text-align: start;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .form-actions span {
+    padding: 0.3em 0.5em;
+    border-radius: 1em;
+    margin: 0 0.3em;
+    cursor: pointer;
+  }
+
+  .delete-user {
+    background-color: red;
+  }
+
+  .suspend-user {
+    background-color: orange;
+  }
+
+  .suspend-user:hover {
+    background-color: #e4531e;
+    color: #fff;
+  }
+
+  .delete-user:hover {
+    background-color: #460808;
+    color: #fff;
+  }
+</style>
+
+<body>
+  <main id="main">
+    <section id="menu-bar" class="hide folded">
+      <div id="user-intro-wrapper" class="user-intro-wrapper">        
+        <div id="user-img" class="user-img"></div>
+        <p id="user-name" class="user-name">Bruce Wayne</p>
+        <div id="notification-wrapper" class="notification-wrapper">
+          <p id="user-profession" class="user-profession">Super Admin</p>
+          <i class="fas fa-bell"><span id="num-of-notification">5</span></i>
+        </div>
+      </div>
+      <div id="menu-items-wrapper">
+        <div id="menu-items-section">
+          <ul id="features">
+            <li><a href="/me/dashboard"><i class="fas fa-tachometer-alt"></i><span class="hide">Dashboard</span></a></li>
+            <li><a href="/me/events"><i class="fas fa-clock"></i><span  class="hide">Events</span></a></li>
+            <li><a href="/me/users"><i class="fas fa-user-tie"></i><span  class="hide">Users</span></a></li>
+            <li><a href="/me/activity"><i class="fas fa-chart-line"></i><span  class="hide">My activity</span></a></li>
+            <!-- <li><i class="fas fa-tasks"></i><span>Tasks</span></li> -->
+            <!-- <li><i class="fas fa-star"></i><span>Appraisal</span></li> -->
+            <!-- <li><i class="fas fa-poll"></i><span>Analytics</span></li> -->
+          </ul>
+          <ul id="settings">
+            <li id="settings-btn"><i class="fas fa-cog"></i><span  class="hide">Settings</span></li>
+            <li class="more-setting hide"><a href="/me/updateProfile">Update Profile</a></li>
+            <li class="more-setting hide">Change password</li>
+            <li><form action="" method="post"><i class="fas fa-sign-out-alt"></i><span  class="hide">Log out</span></form></li>
+          </ul>
+          <div id="expand-menu"><i class="fas fa-angle-double-right"></i></div>
+        </div>
+        
+      </div>
+    </section>
+    <section id="main-section">
+      <i id="menu-icon" class="fas fa-bars ml-0"></i>
+      <div class="menu-icon-trail-bar block"></div>
+      <!-- <header class="feature-header">Events</header> -->
+
+      <div class="card" id="users">
+        <div class="header-and-control">
+          <header class="card-header">Users</header>
+          <div class="card-action">
+            <span class="filter-title">Filter by</span>
+            <a href="#" id="add-admin-btn">+Add admin</a>
+          </div>
+
+        </div>
+        <div class="content" id="users-content">
+          <table>
+            <tr>
+              <th>Fullname</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created At</th>
+              <th>Actions</th>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>Johndoe@mail.com</td>
+              <td>Admin</td>
+              <td>25-07-2020</td>
+              <td>
+                <form class="form-actions" action="">
+                  <span class="suspend-user">suspend</span>
+                  <span class="delete-user">delete</span>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <a href="#" class="more-btn"> More </a>
+      </div>
+      <div class="footer">
+
+        <div class="footer-logo">
+          <p>Q</p>
+        </div>
+        <div class="footer-content">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Sign up</a></li>
+          </ul>
+          <ul>
+            <li><a href="">Events</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Terms of use</a></li>
+          </ul>
+        </div>
+        <!-- <div class="contact-us">
+          <form action="">
+            <input type="text" name="" id="" placeholder="Full Name">
+            <input type="email" name="" id="" placeholder="Email">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Send us a message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div> -->
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+ 
+</body>
+
+</html>

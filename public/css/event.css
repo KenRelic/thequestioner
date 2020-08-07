@@ -1,0 +1,202 @@
+
+.card-header,
+.event-comments-section header {
+  border-top: none;
+  padding: 1.2em 1em;
+  text-align: start;
+  font-size: 2em;
+  background: #000000;
+  overflow: unset;
+  color: #fff;
+}
+
+.event-comments-section header {
+  font-size: 1.5em;
+}
+
+.card-action {
+  font-size: 13px;
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
+
+#search-box {
+  padding: 0.5em 0.5em 0.5em 1em;
+  border-radius: 1em;
+  border: none;
+  outline: none;
+  width: 80%;
+  margin-right: 0.5em;
+}
+
+#search-box+span,
+.update-delete-action>span {
+  padding: 0.3em 1em;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 2em;
+  cursor: pointer;
+  margin-right: 0.5em;
+}
+
+.event-wrapper {
+  position: relative;
+}
+
+.update-delete-action {
+  position: absolute;
+  right: 1em;
+  top: 2em;
+}
+
+#search-box::placeholder {
+  font-style: italic;
+}
+
+.comments-section {
+  padding: 1em;
+}
+
+.user-comment {
+  margin: 1em 0;
+}
+
+.user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-img {
+  font-size: 1.5em;
+  background-color: #b163ff;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0.1em 0.2em;
+  margin-right: 0.2em;
+  margin-left: -0.7em;
+}
+
+.comment-divider {
+  width: 80%;
+  opacity: 0.5;
+  margin: 2em auto 1.5em auto;
+}
+
+.user-comment>p,
+.user-comment>div {
+  margin-left: 1em;
+}
+
+.user-response-section {
+  border-left: 2px solid #b163ff;
+}
+
+.votes-reply-section {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 200px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle-replies {
+  color: #0081f1;
+  color: #ff0385;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 1.5em;
+}
+
+.toggle-replies:hover {
+  text-decoration: underline;
+}
+
+.votes {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50px;
+}
+
+.num-of-votes {
+  font-weight: bold;
+}
+
+.votes span {
+  margin-right: 1em;
+}
+
+.reply {
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.open {
+  display: block;
+}
+
+.close {
+  display: none;
+}
+
+@media screen and (min-width: 781px) {
+  #events-content>div {
+    width: 100%;
+  }
+}
+
+.post-btn {
+  background: #ffffff;
+  border: 1px solid #294aee;
+  color: #000;
+  position: relative;
+  z-index: 1;
+  padding: 1.2em;
+  display: block;
+  margin: 1em 0;
+  border-radius: 2em;
+  min-width: 150px;
+  width: 30%;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.post-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  background-color: #ff29a6;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transition: all 0.3s ease;
+}
+.post-btn:hover::before{
+  width: 100%;
+  height: 100%;
+}
+
+.post-btn:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.post-condition{
+  font-size: 1em;
+  color: #ff0385;;
+  font-weight: bold;
+}
+
+.post-condition + p a{
+  color: #294aee;
+}
+
+.post-condition + p a:hover{
+  text-decoration: underline;
+}

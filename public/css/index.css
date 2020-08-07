@@ -86,13 +86,13 @@ h1 {
 
 }
 
-header input,
+header #learn-more,
 #sign-in-btn {
   padding: 1em;
   border-radius: 2em;
   border: none;
   color: #2b0a4b;
-  background-color: #fff;
+  background: #fff;
   display: block;
   min-width: 170px;
   width: 40%;
@@ -101,6 +101,7 @@ header input,
   cursor: pointer;
   outline: none;
 }
+
 
 header input:hover,
 #sign-in-btn:hover {
@@ -132,7 +133,7 @@ header input:hover,
   height: 96%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex: 1;
   /* padding: 1em; */
   /* display: none; */
@@ -158,6 +159,20 @@ header input:hover,
   width: 100%;
 }
 
+#questioner{
+  font-size: 3em;
+  color: #ff29a6;
+  font-weight: 500;
+  color: #fff;
+  font-weight: bolder;
+  text-shadow: 0 0 15px #cccaca,10px 5px 15px #ff1a9f ,-15px -5px 15px #086be5 ;
+  margin-bottom: 2em;
+}
+#questioner a{
+  text-decoration: none;
+  color: #fff;
+}
+
 #logo p {
   font-size: 8em;
   color: #fff;
@@ -173,9 +188,10 @@ header input:hover,
 .login-signup h2 {
   font-weight: bolder;
   font-size: 2em;
-  line-height: 0;
-  margin-bottom: 1.5em;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
   text-align: center;
+  color: #030303;
 }
 
 .login-signup button,
@@ -237,7 +253,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2.5em auto;
+  margin: 1.2em auto;
 }
 
 .divider hr {
@@ -286,15 +302,18 @@ input[type=button] {
   margin-bottom: 1.5em;
 }
 
-.login-signup button:nth-of-type(2),
+#google-signup,
 .input-wrapper {
-  background-color: #ffffff;
-  border: 1px solid rgb(41, 74, 238);
+  background: #ffffff;
+  border: 1px solid #294aee;
   color: #000;
+}
+#google-signup{
+  color:rgb(41, 74, 238);
 }
 
 .login-signup button:nth-of-type(2) {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .login-signup button::before,
@@ -310,6 +329,9 @@ input[type=button]::before {
   transform-origin: left center;
   transition: all 0.3s ease;
 }
+#google-signup::before{
+  background-color: #294aee;
+}
 
 .login-signup button:hover::before,
 input[type=button]:hover::before {
@@ -322,6 +344,9 @@ input[type=button]:hover {
   color: #fff;
   border: 1px solid #fff;
 }
+#google-signup:hover{
+  color: #fff;
+}
 
 h2 {
   margin-bottom: 1em;
@@ -329,6 +354,10 @@ h2 {
 
 .login-inputs {
   width: 100%;
+}
+
+.login-signup:last-child p{
+  margin: 3em auto 1em auto;
 }
 
 /* .input-wrapper {

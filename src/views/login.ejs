@@ -4,24 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+  
     <link
         href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&family=Poppins:wght@200;400;500;700&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet">
@@ -39,7 +22,7 @@
         <div id="banner-content">
             <h1>Welcome to <br><span id="app-name">Questioner</span></h1>
             <p>Put your upcoming events where people can see and be part of.</p>
-            <input type="button" value="Learn more" class="learn-more">
+            <input type="button" value="Learn more" id="learn-more">
             <p class="hidden-text">Questioner&trade; is a platform for advertising your upcoming events, manage and get
                 people talking about it.</p>
         </div>
@@ -55,8 +38,9 @@
     <% } %> 
     <main id="main">
         <section class="section" id="login-signup-section">
-            <div id="logo">
-                <p>Q</p>
+        
+            <div id="questioner">
+              <p><a href="/">Q</a></p>
             </div>
            
             <div class="login-signup" id="login-section">
@@ -67,13 +51,20 @@
                 <div class="input-wrapper"><label for="fullname">Password</label><i class="fas fa-lock"></i><input
                         type="password" name="password" id="password" placeholder="Password"></div>
                 <button id="signin-btn">Login In</button>
+                <div class="divider">
+                  <hr>
+                  <div>OR</div>
+                  <hr>
+              </div>
+              <button id="google-signup"><i class="fab fa-google"></i> &nbsp;&nbsp;&nbsp;Login with Google</button>
+
                 <p>Don't have an account? <a href="/signUp"> Sign Up</a></p>
             </div>
-            <div><span>Create</span> | <span>Manage</span> | <span>Make it happen</span> </div>
+       
         </section>
 
     </main>
-   
+   <footer><a href="/privacyPolicy">Privacy Policy</a></footer>
    
 </body>
 

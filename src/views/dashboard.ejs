@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>KeepTrack&trade; | Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+      <!-- Font awesome -->
+      <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <script src="https://kit.fontawesome.com/751b3a69bc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main id="main">
+    <section id="menu-bar" class="hide folded">
+      <div id="user-intro-wrapper" class="user-intro-wrapper">        
+        <div id="user-img" class="user-img"></div>
+        <p id="user-name" class="user-name">Bruce Wayne</p>
+        <div id="notification-wrapper" class="notification-wrapper">
+          <p id="user-profession" class="user-profession">Super Admin</p>
+          <i class="fas fa-bell"><span id="num-of-notification">5</span></i>
+        </div>
+      </div>
+      <div id="menu-items-wrapper">
+        <div id="menu-items-section">
+          <ul id="features">
+            <li><a href="/me/dashboard"><i class="fas fa-tachometer-alt"></i><span class="hide">Dashboard</span></a></li>
+            <li><a href="/me/events"><i class="fas fa-clock"></i><span  class="hide">Events</span></a></li>
+            <li><a href="/me/users"><i class="fas fa-user-tie"></i><span  class="hide">Users</span></a></li>
+            <li><a href="/me/activity"><i class="fas fa-chart-line"></i><span  class="hide">My activity</span></a></li>
+            <!-- <li><i class="fas fa-tasks"></i><span>Tasks</span></li> -->
+            <!-- <li><i class="fas fa-star"></i><span>Appraisal</span></li> -->
+            <!-- <li><i class="fas fa-poll"></i><span>Analytics</span></li> -->
+          </ul>
+          <ul id="settings">
+            <li id="settings-btn"><i class="fas fa-cog"></i><span  class="hide">Settings</span></li>
+            <li class="more-setting hide"><a href="/me/updateProfile">Update Profile</a></li>
+            <li class="more-setting hide">Change password</li>
+            <li><form action="" method="post"><i class="fas fa-sign-out-alt"></i><span  class="hide">Log out</span></form></li>
+          </ul>
+          <div id="expand-menu"><i class="fas fa-angle-double-right"></i></div>
+        </div>
+        
+      </div>
+    </section>
+    <section id="main-section">
+      <i id="menu-icon" class="fas fa-bars ml-0"></i>
+      <div class="menu-icon-trail-bar block"></div>
+      <header class="feature-header">Dashboard Overview</header>
+      <div id="feature-content">
+        <div class="card" id="events">
+          <div class="header-and-control">
+            <header class="card-header">Events</header>
+            <div class="card-action">
+              <span class="filter-title">Most recent events</span>
+              <a href="/me/events/add" id="add-event-btn">+Add event</a>
+            </div>
+
+          </div>
+          <div class="content" id="events-content">
+            <div>
+              <a href="id">
+                <div class="event-img"></div>
+                <p class="event-name">The CONCAF event coming up 30th July</p>
+                <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem
+                  ipsum
+                  dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio
+                  nemo
+                  placeat rem exercitationem possimus. </p>
+                <div class="tags-and-comment">
+                  <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                  </div>
+                  <span class="comments">80 Comments</span>
+                </div>
+              </a>
+
+            </div>
+            <div class="divider">
+              <hr>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">The CONCAF event coming up 30th July</p>
+              <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio nemo
+                placeat rem exercitationem possimus. </p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                </div>
+                <span class="comments">80 Comments</span>
+              </div>
+            </div>
+            <div class="divider">
+              <hr>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+          </div>
+          <a href="/me/events" class="more-btn"> More </a>
+        </div>
+        <div class="card" id="users">
+          <div class="header-and-control">
+            <header class="card-header">Users</header>
+            <div class="card-action">
+              <span class="filter-title">Filter by</span>
+              <a href="/me/users/add" id="add-admin-btn">+Add admin</a>
+            </div>
+
+          </div>
+          <div class="content" id="users-content">
+            <table>
+              <tr>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Created At</th'>
+              </tr>
+              <tr>
+                <td>John Doe</td>
+                <td>Johndoe@mail.com</td>
+                <td>Admin</td>
+                <td>25-07-2020</td>
+              </tr>
+              <tr>
+                <td>Peter Bale</td>
+                <td>pbale@mail.com</td>
+                <td>User</td>
+                <td>24-07-2020</td>
+              </tr>
+              <tr>
+                <td>John Doe</td>
+                <td>Johndoe@mail.com</td>
+                <td>Admin</td>
+                <td>25-07-2020</td>
+              </tr>
+              <tr>
+                <td>Peter Bale</td>
+                <td>pbale@mail.com</td>
+                <td>User</td>
+                <td>24-07-2020</td>
+              </tr>
+            </table>
+          </div>
+          <a href="/me/users" class="more-btn"> More </a>
+        </div>
+
+        <div class="card" id="activities">
+          <div class="header-and-control">
+            <header class="card-header">Activity log</header>
+          </div>
+          <div id="activities-content">
+            <div class="activity-done">
+              <p> <span class="activity-date">15-07-2020</span> Changed Password</p>
+            </div>
+            <div class="activity-done">
+              <p> <span class="activity-date">15-07-2020</span> Added a new admin</p>
+            </div>
+            <div class="activity-done">
+              <p> <span class="activity-date">15-07-2020</span> Changed profile photo</p>
+            </div>
+            <div class="activity-done">
+              <p> <span class="activity-date">15-07-2020</span> Deleted an event</p>
+            </div>
+            <div class="activity-done">
+              <p> <span class="activity-date">15-07-2020</span> Added a new tag to <b>"DENO THE NEW NODE"</b> event</p>
+            </div>
+          </div>
+          <a href="/me/activity" class="more-btn"> More </a>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+ 
+</body>
+
+</html>

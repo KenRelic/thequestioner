@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Questioner | Events</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <script src="https://kit.fontawesome.com/751b3a69bc.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  #search-box {
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    width: 80%;
+    margin-right: 0.5em;
+  }
+
+  #search-box+span,
+  .update-delete-action>span {
+    vertical-align: middle;
+    background-color: #fff;
+    border-radius: 2em;
+    cursor: pointer;
+    margin-right: 0.5em;
+    line-height: 1.5;
+    padding: 0.2em 0.5em;
+    text-align: center;
+  }
+.fa-edit{
+  color:rebeccapurple
+}
+.fa-trash{
+  color: red;
+}
+  #search-box+span {
+    color: rebeccapurple;
+  }
+
+  .event-wrapper {
+    position: relative;
+  }
+
+  .update-delete-action {
+    position: absolute;
+    right: 1em;
+    top: 2em;
+  }
+
+  #search-box::placeholder {
+    font-style: italic;
+  }
+</style>
+
+<body>
+  <main id="main">
+    <section id="menu-bar" class="hide folded">
+      <div id="user-intro-wrapper" class="user-intro-wrapper">
+        <div id="user-img" class="user-img"></div>
+        <p id="user-name" class="user-name">Bruce Wayne</p>
+        <div id="notification-wrapper" class="notification-wrapper">
+          <p id="user-profession" class="user-profession">Super Admin</p>
+          <i class="fas fa-bell"><span id="num-of-notification">5</span></i>
+        </div>
+      </div>
+      <div id="menu-items-wrapper">
+        <div id="menu-items-section">
+          <ul id="features">
+            <li><a href="/me/dashboard"><i class="fas fa-tachometer-alt"></i><span class="hide">Dashboard</span></a></li>
+            <li><a href="/me/events"><i class="fas fa-clock"></i><span  class="hide">Events</span></a></li>
+            <li><a href="/me/users"><i class="fas fa-user-tie"></i><span  class="hide">Users</span></a></li>
+            <li><a href="/me/activity"><i class="fas fa-chart-line"></i><span  class="hide">My activity</span></a></li>
+            <!-- <li><i class="fas fa-tasks"></i><span>Tasks</span></li> -->
+            <!-- <li><i class="fas fa-star"></i><span>Appraisal</span></li> -->
+            <!-- <li><i class="fas fa-poll"></i><span>Analytics</span></li> -->
+          </ul>
+          <ul id="settings">
+            <li id="settings-btn"><i class="fas fa-cog"></i><span  class="hide">Settings</span></li>
+            <li class="more-setting hide"><a href="/me/updateProfile">Update Profile</a></li>
+            <li class="more-setting hide">Change password</li>
+            <li><form action="" method="post"><i class="fas fa-sign-out-alt"></i><span  class="hide">Log out</span></form></li>
+          </ul>
+          <div id="expand-menu"><i class="fas fa-angle-double-right"></i></div>
+        </div>
+
+      </div>
+    </section>
+    <section id="main-section">
+      <i id="menu-icon" class="fas fa-bars ml-0"></i>
+      <div class="menu-icon-trail-bar block"></div>
+      <header class="feature-header">Events</header>
+      <div id="feature-content">
+        <div class="card" id="events">
+          <div class="header-and-control">
+            <header class="card-header" style="border-top:none;padding: 2em 1em;"><input type="search"
+                placeholder="search for an event" name="event" id="search-box"><span class="fa fa-search"></span>
+            </header>
+            <div class="card-action">
+              <span class="filter-title">Most recent events to not so recent</span>
+              <a href="/me/events/add" id="add-event-btn">+Add event</a>
+            </div>
+          </div>
+          <div class="content" id="events-content">
+            <div class="event-wrapper">
+              <div class="update-delete-action"><span class="fa fa-edit"></span><span class="fa fa-trash"></span></div>
+              <a href="eventId.html">
+                <div class="event-img"></div>
+                <p class="event-name">The CONCAF event coming up 30th July</p>
+                <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem
+                  ipsum
+                  dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio
+                  nemo
+                  placeat rem exercitationem possimus. </p>
+                <div class="tags-and-comment">
+                  <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                  </div>
+                  <span class="comments">80 Comments</span>
+                </div>
+              </a>
+            </div>
+            <div class="divider">
+              <hr>
+            </div>
+            <div class="event-wrapper">
+              <div class="update-delete-action"><span class="fa fa-edit"></span><span class="fa fa-trash"></span></div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div class="event-wrapper">
+              <div class="update-delete-action"><span></span><span></span></div>
+              <div class="event-img"></div>
+              <p class="event-name">The CONCAF event coming up 30th July</p>
+              <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio nemo
+                placeat rem exercitationem possimus. </p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                </div>
+                <span class="comments">80 Comments</span>
+              </div>
+            </div>
+            <div class="divider">
+              <hr>
+            </div>
+            <div class="event-wrapper">
+              <div class="update-delete-action"><span></span><span></span></div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <div class="event-img"></div>
+              <p class="event-name">Deno is the new Node</p>
+              <p class="event-description">After the release of deno Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Officiis, vero expedita? Dolorem tempora nemo magni optio, harum iure odit illo perspiciatis
+                pariatur voluptatibus? Odio esse eum mollitia quae facere quo!</p>
+              <div class="tags-and-comment">
+                <div class="tags"><span>Deno</span> <span>Node</span> <span>Online</span></div>
+                <span class="comments">200 Comments</span>
+              </div>
+            </div>
+            <div>
+              <a href="id">
+                <div class="event-img"></div>
+                <p class="event-name">The CONCAF event coming up 30th July</p>
+                <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem
+                  ipsum
+                  dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio
+                  nemo
+                  placeat rem exercitationem possimus. </p>
+                <div class="tags-and-comment">
+                  <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                  </div>
+                  <span class="comments">80 Comments</span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="id">
+                <div class="event-img"></div>
+                <p class="event-name">The CONCAF event coming up 30th July</p>
+                <p class="event-description">The event is the third to be hosted this Lorem ipsium of the time Lorem
+                  ipsum
+                  dolor sit amet consectetur adipisicing elit. Praesentium, eos voluptas corrupti aperiam velit optio
+                  nemo
+                  placeat rem exercitationem possimus. </p>
+                <div class="tags-and-comment">
+                  <div class="tags"><span>Design</span> <span>Ladies</span> <span>Conference</span> <span>Africa</span>
+                  </div>
+                  <span class="comments">80 Comments</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="more-btn"> More </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+
+    <!-- // let tags = document.querySelectorAll('.tags span')
+    // tags.forEach(tag => {
+    //   switch (tag.innerText) {
+    //     case 'Design':
+    //       tag.style.backgroundColor = "orange";
+    //       break;
+    //     case 'Ladies':
+    //       tag.style = "background-color:deeppink; color: #000";
+    //       break;
+    //     case 'Conference':
+    //       tag.style = "background-color:skyblue; color: #000";
+    //       break;
+    //     case 'Africa':
+    //       tag.style = "background-color:lightgreen; color: #000";
+    //       break;
+    //     case 'Online':
+    //       tag.style = "background-color:red; color: #fff";
+    //       break;
+    //     case `${tag.innerText === 'Node'? 'Node': tag.innerText ==='Deno'? 'Deno': ''}`:
+    //       tag.style = "background-color:limegreen; color: #000";
+    //       break;
+    //     default:
+    //       tag.style.backgroundColor = "lightgrey";
+    //       break;
+    //   }
+    // }) -->
+
+</body>
+
+</html>

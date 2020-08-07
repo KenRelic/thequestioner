@@ -2,10 +2,19 @@ const express = require('express');
 const router = express.Router();
 
 const { body, validationResult } = require('express-validator');
+const userController = require('../controllers/userController');
+
 const Token = require('../../model/Token');
 const User = require('../../model/User');
 
-// router.post('/login', userController.loginPage);
+router.get('/dashboard', userController.dashboard);
+router.get('/events', userController.events);
+router.get('/activity', userController.activity);
+router.get('/settings', userController.settings);
+router.get('/events/add', userController.newEvent);
+router.get('/users/add', userController.newAdmin);
+router.get('/users', userController.users);
+router.post('/logout', userController.logout);
 router.post('/signUp', [
   body('fullname').isLength(4),
   body('username').isEmail(),
@@ -26,15 +35,15 @@ router.post('/signUp', [
 
 
 
-app.post('/user', body('email').custom(value => {
-  return User.findUserByEmail(value).then(user => {
-    if (user) {
-      return Promise.reject('E-mail already in use');
-    }
-  });
-}), (req, res) => {
-  // Handle the request
-});
+// app.post('/user', body('email').custom(value => {
+//   return User.findUserByEmail(value).then(user => {
+//     if (user) {
+//       return Promise.reject('E-mail already in use');
+//     }
+//   });
+// }), (req, res) => {
+//   // Handle the request
+// });
 
 
 module.exports = router;

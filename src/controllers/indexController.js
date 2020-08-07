@@ -16,6 +16,10 @@ exports.signUpPage = function (req, res) {
   })
 }
 
+exports.privacyPage = function (req, res) {
+  res.render('privacyPolicy')
+}
+
 // exports.resendLinkPage = function (req, res) {
 //   res.render('resendLink', {
 //     // user_id: req.body._id

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Questioner | Create event</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/event.css">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/751b3a69bc.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  #event-actions {
+    position: absolute;
+    top: 0;
+    right: 0.2em;
+  }
+
+  #event-actions span {
+
+    vertical-align: middle;
+    background-color: #fff !important;
+    font-size: 0.6em;
+    border-radius: 2em;
+    cursor: pointer;
+    margin-right: 0.5em;
+    line-height: 1.5;
+    padding: 0.3em 0.7em;
+    text-align: center;
+  }
+
+  .fa-edit {
+    color: rebeccapurple
+  }
+
+  .fa-times {
+    color: red;
+  }
+</style>
+
+<body>
+  <main id="main">
+    <section id="menu-bar" class="hide folded">
+      <div id="user-intro-wrapper" class="user-intro-wrapper">
+        <div id="user-img" class="user-img"></div>
+        <p id="user-name" class="user-name">Bruce Wayne</p>
+        <div id="notification-wrapper" class="notification-wrapper">
+          <p id="user-profession" class="user-profession">Super Admin</p>
+          <i class="fas fa-bell"><span id="num-of-notification">5</span></i>
+        </div>
+      </div>
+      <div id="menu-items-wrapper">
+        <div id="menu-items-section">
+          <ul id="features">
+            <li><a href="/me/dashboard"><i class="fas fa-tachometer-alt"></i><span class="hide">Dashboard</span></a></li>
+            <li><a href="/me/events"><i class="fas fa-clock"></i><span  class="hide">Events</span></a></li>
+            <li><a href="/me/users"><i class="fas fa-user-tie"></i><span  class="hide">Users</span></a></li>
+            <li><a href="/me/activity"><i class="fas fa-chart-line"></i><span  class="hide">My activity</span></a></li>
+            <!-- <li><i class="fas fa-tasks"></i><span>Tasks</span></li> -->
+            <!-- <li><i class="fas fa-star"></i><span>Appraisal</span></li> -->
+            <!-- <li><i class="fas fa-poll"></i><span>Analytics</span></li> -->
+          </ul>
+          <ul id="settings">
+            <li id="settings-btn"><i class="fas fa-cog"></i><span  class="hide">Settings</span></li>
+            <li class="more-setting hide"><a href="/me/updateProfile">Update Profile</a></li>
+            <li class="more-setting hide">Change password</li>
+            <li><form action="" method="post"><i class="fas fa-sign-out-alt"></i><span  class="hide">Log out</span></form></li>
+          </ul>
+          <div id="expand-menu"><i class="fas fa-angle-double-right"></i></div>
+        </div>
+
+      </div>
+    </section>
+    <section id="main-section">
+      <i id="menu-icon" class="fas fa-bars ml-0"></i>
+      <div class="menu-icon-trail-bar block"></div>
+      <!-- <header class="feature-header">Events</header> -->
+      <form action="" name='new-event'>
+        <div id="feature-content">
+          <div class="card" id="events">
+            <div class="header-and-control">
+              <header class="card-header"><input type="text" name="header" id="event-header"
+                  placeholder="type title here: Deno is the new Node">
+                <div id="event-actions"><span class="fa fa-times" id="clear-btn"></span></div>
+                <div class="card-action">
+
+                  <div class="tags"> <span id="tags-label">Tags:</span> <input type="text" name="tags" id="event-tags"
+                      placeholder="Add tags: separate tags with comma">
+                  </div>
+
+                  <style>
+                    #event-header,
+                    #event-tags {
+                      font-size: 1.5em;
+                      background-color: transparent;
+                      color: #fff;
+                      border: none;
+                      flex: 1;
+                      width: 100%;
+                    }
+
+                    textarea {
+                      border: 2px solid rebeccapurple;
+                      padding: 0.5em;
+                      resize: vertical;
+                      width: 98%;
+                    }
+
+                    #event-header:focus,
+                    #event-tags:focus,
+                    textarea:focus {
+                      outline: 2px solid rebeccapurple;
+                    }
+
+                    #tags-label {
+                      color: #fff;
+                      margin-right: 1em;
+                      background-color: rebeccapurple;
+                    }
+
+                    #event-tags {
+                      padding: 0.5em 1em;
+                      font-size: 1.2em;
+                      flex: 1;
+                    }
+
+                    .event-name {
+                      margin-top: 1.5em;
+                    }
+
+                    .create-options {
+                      margin: 2em auto;
+                      width: 100%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+
+                    }
+
+                    .create-options button {
+                      padding: 0.6em 1em;
+                      border-radius: 1em;
+                      line-height: 1.5;
+                      border: none;
+                      background-color: rebeccapurple;
+                      color: #fff;
+                      margin: 0 1em;
+                      cursor: pointer;
+                    }
+
+                    #header-img,
+                    .body-img {
+                      width: 97%;
+                      height: 50px;
+                      padding: 1em;
+                      background-color: rgb(211, 211, 211);
+                      border-radius: 1em;
+                      margin: 1em auto;
+                    }
+
+                    #header-img::-webkit-file-upload-button,
+                    .body-img::-webkit-file-upload-button {
+                      min-width: 30%;
+                      width: fit-content;
+                      height: 100%;
+                      color: #fff;
+                      background-color: rebeccapurple;
+                      border: none;
+                      border-radius: 1em;
+                      margin-right: 1em;
+                    }
+
+
+                    .image-gallery {
+                      position: relative;
+                      /* display: flex; */
+                      justify-content: center;
+                      align-items: center;
+                      width: 100%;
+                      /* height: 300px; */
+                      /* padding: 0.5em; */
+                      margin: 1em auto;
+                      max-width: 498px;
+                      border: 2px dashed rebeccapurple;
+                    }
+
+                    #nav-right,
+                    #nav-left {
+                      position: absolute;
+                      width: 30px;
+                      height: 30px;
+                      text-align: center;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      font-size: 1.3em;
+                      cursor: pointer;
+                      background-color: #000;
+                      border-radius: 1em;
+                      margin: 0 0.2em;
+                      color: #fff;
+                    }
+
+                    .opacity-50 {
+                      opacity: 0.5;
+                    }
+
+                    #nav-right {
+                      right: 0.5em;
+                    }
+
+                    #nav-left {
+                      left: 0.5em;
+                    }
+
+                    #nav-right i,
+                    #nav-left i {
+                      text-align: center;
+                      line-height: 3;
+                      margin-right: 0;
+                    }
+
+                    .images-wrapper {
+                      height: inherit;
+                      flex: 1;
+                      width: inherit;
+                      align-items: center;
+                      overflow: hidden;
+                      border-radius: 1em;
+                    }
+
+                    .event-img {
+                      width: 100%;
+                      flex: 1;
+                      cursor: zoom-in;
+                      transition: all 0.3s ease-in;
+                    }
+
+                    @media screen and (min-width: 465px) {
+                      .image-gallery {
+                        display: flex;
+                        overflow: hidden;
+                        height: 250px;
+                      }
+
+                      .images-wrapper {
+                        display: flex;
+                        overflow: hidden;
+                      }
+                    }
+                  </style>
+                </div>
+              </header>
+            </div>
+            <div class="content" id="events-content">
+              <div class="event-wrapper">
+                <input type="file" name="body-images" id="header-img" accept="image/*" onchange="loadBannerImg()">
+                <div class="event-banner-img-holder"></div>
+                <p class="event-name">About the meetup</p>
+                <textarea name="event-description" id="" cols="30" rows="10" placeholder="Deno was just relesead loorem ...." class="input"></textarea>
+                <br />
+                <p class="event-name">Key points of the meetup</p>
+                <textarea name="event-key-points" id="" cols="30" rows="10" placeholder="--The basics of DENO.
+--The Fixes Deno bring to nodejs
+--etc" class="input"></textarea>
+                <br />
+                <p class="event-name">Date & Time</p>
+                <textarea name="date-time" id="" cols="30" rows="3"
+                  placeholder="The meetup will be on 23rd August 2020 by 10am" class="input"></textarea>
+                <p class="event-name">Venue</p>
+                <textarea name="venue" id="" cols="30" rows="3" placeholder="The venue is at Garden city hotel"
+                  class="input"></textarea>
+
+                <br>
+                <p class="event-name">How to get in</p>
+                <textarea name="requirement" id="" cols="30" rows="3"
+                  placeholder="Visit www.gatepass.com or Garden city hotel to get your ticket" class="input"></textarea>
+                <p class="event-name">Event images</p>
+                <p>Maximum of 4 images</p>
+                <input type="file" name="body-images" multiple class="body-img" accept="image/*"
+                  onchange="loadFile(event)">
+
+                <div class="image-gallery">
+                  <div id="nav-left" class="opacity-50"><i class="fas fa-angle-left"></i></div>
+                  <div class="images-wrapper">
+                    <img src="" alt="" class="event-img first-img">
+                    <img src="" alt="" class="event-img">
+                    <img src="" alt="" class="event-img">
+                    <img src="" alt="" class="event-img">
+                  </div>
+                  <div id="nav-right"><i class="fas fa-angle-right"></i></div>
+                </div>
+                <br>
+                <div class="create-options"><button type="submit" id="create-return">Create & return</button> <button
+                    id="create" type="submit">Create</button>
+                </div>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+  <script>
+    let clearBtn = document.getElementById('clear-btn');
+    let createEvent = document.getElementById('create');
+    let createEventReturn = document.getElementById('create-return');
+    let inputs = document.querySelectorAll('.inputs');
+    inputs = [...inputs];
+
+    inputs.forEach(input => input.addEventListener('keydown', preventDefault));
+
+
+    clearBtn.addEventListener('click', clearForm)
+    createEvent.addEventListener('click', submitForm)
+    createEventReturn.addEventListener('click', submitForm)
+
+    function preventDefault(event) {
+      let charCode = event.which || event.keyCode;
+      if (charCode === 13) {
+        event.preventDefault();
+      }
+    }
+
+    function submitForm() {
+      if (checkIfHeaderImg() && checkIfImages()) return  document.forms['new-event'].submit();
+      return false;
+    }
+
+    function clearForm() {
+      document.forms['new-event'].reset();
+    }
+
+    function checkIfImages() {
+      let multiImages = document.querySelector('.body-img')
+      let allFiles = [...multiImages.files];
+      if(allFiles.length < 1) return false
+      return allFiles.reduce((acc, file) => {
+        if (file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/gif') {
+          if (acc === false) return acc;
+          return acc = true
+        } else {
+          return acc = false
+        }
+      }, allFiles[0]);
+
+    }
+
+    function checkIfHeaderImg() {
+      let headerImage = document.getElementById('header-img');
+      return Boolean(headerImage.files[0].type == "image/jpeg" || headerImage.files[0].type == "image/png");
+    }
+
+    function loadFile() {
+      let imageHolders = document.querySelectorAll('.event-img');
+      imageHolders = [...imageHolders];
+      imageHolders.forEach(holder => holder.src = '')
+      let multiImages = document.querySelector('.body-img');
+      let allFiles = [...multiImages.files];
+      for (let i = 0; i < allFiles.length; i += 1) {
+        let reader = new FileReader();
+        reader.onload = () => {
+          imageHolders[i].src = reader.result;
+        };
+        reader.readAsDataURL(allFiles[i]);
+      }
+    }
+
+    function loadBannerImg() {
+      let headerImage = document.getElementById('header-img');
+      let headerImageHolder = document.querySelector('.event-banner-img-holder');
+      if(headerImage.files[0]) return headerImageHolder.style.backgroundImage = `url(${URL.createObjectURL(headerImage.files[0])})`;
+     return headerImageHolder.style.backgroundImage = `url('')`;
+    
+      // output.onload = function () {
+      //   URL.revokeObjectURL(output.src) // free memory
+      // }
+    }
+
+    const navImgLeft = document.getElementById('nav-left');
+    const navImgRight = document.getElementById('nav-right');
+    navImgLeft.addEventListener('click', moveImages);
+    navImgRight.addEventListener('click', moveImages);
+    const firstImage = document.querySelector('.first-img');
+
+
+    function moveImages() {
+      switch (this.id == 'nav-right') {
+        case true:
+          if (firstImage.style.marginLeft !== '-300%') {
+            firstImage.style.marginLeft = `${Number(firstImage.style.marginLeft.replace('%','')) - 100}%`;
+            this.classList.remove('opacity-50');
+            navImgLeft.classList.remove('opacity-50');
+          }
+          if (firstImage.style.marginLeft == '-300%') this.classList.add('opacity-50');
+          break;
+        case false:
+          if (firstImage.style.marginLeft !== '' && firstImage.style.marginLeft !== '0%') {
+            firstImage.style.marginLeft = `${Number(firstImage.style.marginLeft.replace('%','')) + 100}%`;
+            this.classList.remove('opacity-50');
+            navImgRight.classList.remove('opacity-50');
+          }
+          if (firstImage.style.marginLeft == '0%') this.classList.add('opacity-50');
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
+  <!-- 
+<input type="file" accept="image/*" onchange="loadFile(event)">
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+</script>
+<input type="file" accept="image/*" onchange="loadFile(event)">
+<img id="output"/>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script> -->
+</body>
+
+</html>
+
+<!-- textBody.split('#')[0].replace('**'+textBody.split('#')[0].trim().match(/[a-zA-Z0-9\s]+/)[0]+'**','').trim() -->
